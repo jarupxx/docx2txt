@@ -1,5 +1,5 @@
 
-Sub docx2txt マクロ()
+Sub docx2txt()
 '
 ' dicx2txt Macro
 '
@@ -11,7 +11,7 @@ Do While wordFile <> ""
     wordFile = "C:¥before¥" & wordFile
     Documents.Open wordFile
     Documents(wordFile).Activate
-    ActiveDocument.SaveAs2 FileName:=txtFileName, FileFormat:=wdFormatDOSTextLineBreaks
+    ActiveDocument.SaveAs2 FileName:=txtFileName, FileFormat:=wdFormatText, Encoding:=msoEncodingUTF8, LineEnding:=wdCRLF
     ActiveDocument.Close
     msg = msg & txtFileName & vbCrLf
     wordFile = Dir()
